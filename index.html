@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Web Responsif</title>
+    <style>
+        /* Gaya dasar untuk body */
+        body {
+            background-color: #ffffff; /* Latar belakang putih */
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        /* Kontainer utama dengan lebar 500px */
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box; /* Agar padding tidak menambah lebar */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Gaya untuk judul */
+        .title {
+            text-align: center; /* Posisi teks di tengah */
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Kontainer untuk tombol (menggunakan Flexbox) */
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Memberi ruang antara tombol */
+            align-items: center;
+        }
+
+        /* Gaya umum untuk tombol */
+        .btn {
+            text-decoration: none; /* Menghapus garis bawah pada link */
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Efek hover saat kursor di atas tombol */
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">Judul Halaman</h1>
+        <p style="text-align: center; color: #555;">Ini adalah halaman web dengan lebar 500px yang akan mengalihkan Anda ke browser utama jika dibuka dari dalam aplikasi media sosial.</p>
+        
+        <div class="button-container">
+            <a href="https://news.google.com" class="btn">Back</a>
+            
+            <a href="https://news.google.com" class="btn">Next</a>
+        </div>
+    </div>
+
+    <script>
+        // Skrip untuk mendeteksi browser dalam aplikasi dan mengalihkannya
+        (function() {
+            // Mendapatkan user agent dari browser
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Pola untuk mendeteksi browser dalam aplikasi populer
+            const inAppBrowsers = /FBAN|FBAV|Instagram|Twitter/i;
+
+            // Cek apakah user agent cocok dengan pola di atas
+            if (inAppBrowsers.test(userAgent)) {
+                // Jika ya, tunggu 3 detik (3000 milidetik)
+                setTimeout(function() {
+                    // Coba alihkan ke browser eksternal
+                    // Cara ini membuat "intent" untuk membuka URL di browser utama Android
+                    // Untuk iOS, ini akan mencoba membuka link di Safari
+                    const currentUrl = window.location.href;
+                    const intentUrl = "intent://" + currentUrl.replace(/https?:\/\//, "") + "#Intent;scheme=https;package=com.android.chrome;end";
+                    
+                    // Coba buka dengan intent untuk Android, atau fallback ke cara biasa untuk iOS
+                    try {
+                         // Untuk Android, coba buka di Chrome
+                        if (/android/i.test(userAgent)) {
+                           window.location.href = intentUrl;
+                        } else {
+                           // Untuk iOS dan lainnya, cukup panggil ulang URL
+                           window.location.href = currentUrl;
+                        }
+                    } catch (e) {
+                        // Jika gagal, lakukan redirect standar
+                        window.location.href = currentUrl;
+                    }
+
+                }, 3000); // Waktu tunggu 3 detik
+            }
+        })();
+    </script>
+
+</body>
+</html>
