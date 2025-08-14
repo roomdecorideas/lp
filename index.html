@@ -32,31 +32,43 @@
         .title {
             text-align: center; /* Posisi teks di tengah */
             color: #333;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         /* Kontainer untuk tombol (menggunakan Flexbox) */
-        .button-container {
-            display: flex;
-            justify-content: space-between; /* Memberi ruang antara tombol */
-            align-items: center;
-        }
-
-        /* Gaya umum untuk tombol */
-        .btn {
-            text-decoration: none; /* Menghapus garis bawah pada link */
-            color: white;
-            background-color: #007bff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        /* Efek hover saat kursor di atas tombol */
-        .btn:hover {
-            background-color: #0056b3;
-        }
+            .button-container {
+                display: flex;
+                justify-content: space-between; /* Memberi ruang antara tombol */
+                align-items: center;
+            }
+            
+            /* Gaya umum untuk tombol */
+            .btn {
+                text-decoration: none; /* Menghapus garis bawah pada link */
+                color: white;
+                background-color: #007bff;
+                padding: 10px 40px; /* Menambah padding horizontal untuk memperlebar tombol */
+                border-radius: 5px;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+                flex-grow: 1; /* Membuat tombol mengisi ruang yang tersedia */
+                margin: 0 5px; /* Memberi sedikit jarak antar tombol */
+                text-align: center; /* Agar teks tetap di tengah tombol yang lebih lebar */
+            }
+            
+            /* Menghapus margin pada tombol pertama dan terakhir */
+            .button-container .btn:first-child {
+                margin-left: 0;
+            }
+            
+            .button-container .btn:last-child {
+                margin-right: 0;
+            }
+            
+            /* Efek hover saat kursor di atas tombol */
+            .btn:hover {
+                background-color: #0056b3;
+            }
     </style>
 </head>
 <body>
