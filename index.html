@@ -22,16 +22,17 @@
     }(window, location));
     </script>
     <style>
-        /* Gaya dasar untuk body */
+        /* PERUBAHAN: Latar belakang luar diubah menjadi abu-abu gelap */
         body {
-            background-color: #ffffff; /* Latar belakang putih */
+            background-color: #333333; /* Abu-abu gelap */
             font-family: sans-serif;
             margin: 0;
-            padding: 1px;
+            padding: 20px; /* Memberi sedikit ruang di sekitar container */
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            box-sizing: border-box; /* Memastikan padding tidak menyebabkan overflow */
         }
 
         /* Kontainer utama dengan lebar 500px */
@@ -39,72 +40,71 @@
             max-width: 500px;
             width: 100%;
             padding: 20px;
-            box-sizing: border-box; /* Agar padding tidak menambah lebar */
+            box-sizing: border-box;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #ffffff; /* PERUBAHAN: Latar belakang konten dibuat putih */
         }
 
-        /* Gaya untuk judul */
+        /* Gaya untuk judul (opsional, jika Anda ingin menambahkannya) */
         .title {
-            text-align: center; /* Posisi teks di tengah */
+            text-align: center;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        /* Iklan agar lebih responsif */
+        .ad-container {
+            text-align: center; /* Memusatkan skrip iklan */
+            margin-bottom: 20px; /* Memberi jarak ke tombol */
         }
 
-        /* Kontainer untuk tombol (menggunakan Flexbox) */
-            .button-container {
-                display: flex;
-                justify-content: space-between; /* Memberi ruang antara tombol */
-                align-items: center;
-            }
+        /* Kontainer untuk tombol */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px; /* Cara modern untuk memberi jarak antar flex item */
+        }
             
-            /* Gaya umum untuk tombol */
-            .btn {
-                text-decoration: none; /* Menghapus garis bawah pada link */
-                color: white;
-                background-color: #007bff;
-                padding: 10px 40px; /* Menambah padding horizontal untuk memperlebar tombol */
-                border-radius: 5px;
-                font-weight: bold;
-                transition: background-color 0.3s ease;
-                flex-grow: 1; /* Membuat tombol mengisi ruang yang tersedia */
-                margin: 0 5px; /* Memberi sedikit jarak antar tombol */
-                text-align: center; /* Agar teks tetap di tengah tombol yang lebih lebar */
-            }
+        /* Gaya umum untuk tombol */
+        .btn {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 12px 20px; /* Padding disesuaikan agar lebih seimbang */
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            flex-grow: 1;
+            text-align: center;
+        }
             
-            /* Menghapus margin pada tombol pertama dan terakhir */
-            .button-container .btn:first-child {
-                margin-left: 0;
-            }
-            
-            .button-container .btn:last-child {
-                margin-right: 0;
-            }
-            
-            /* Efek hover saat kursor di atas tombol */
-            .btn:hover {
-                background-color: #0056b3;
-            }
+        /* Efek hover saat kursor di atas tombol */
+        .btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">        
-        <center><script type="text/javascript">
-                	atOptions = {
-                		'key' : 'a317173734fbcd8901b885b17a227f72',
-                		'format' : 'iframe',
-                		'height' : 250,
-                		'width' : 300,
-                		'params' : {}
-                	};
-                </script>
-                <script type="text/javascript" src="//roastwearwritten.com/a317173734fbcd8901b885b17a227f72/invoke.js"></script></center>
+    <div class="container">
+        <div class="ad-container">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : 'a317173734fbcd8901b885b17a227f72',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//roastwearwritten.com/a317173734fbcd8901b885b17a227f72/invoke.js"></script>
+        </div>
         
         <div class="button-container">
             <a href="https://roastwearwritten.com/bmu1rhf7?key=d03769d0209088982f9e98466ebdf604" class="btn">BACK</a>
-            
             <a href="https://roastwearwritten.com/gfjrphnd?key=3d809b5b823dd66e24a5edcb7e62343e" class="btn">NEXT</a>
         </div>
     </div>
@@ -112,37 +112,23 @@
     <script>
         // Skrip untuk mendeteksi browser dalam aplikasi dan mengalihkannya
         (function() {
-            // Mendapatkan user agent dari browser
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-            // Pola untuk mendeteksi browser dalam aplikasi populer
             const inAppBrowsers = /FBAN|FBAV|Instagram|Twitter/i;
-
-            // Cek apakah user agent cocok dengan pola di atas
             if (inAppBrowsers.test(userAgent)) {
-                // Jika ya, tunggu 3 detik (3000 milidetik)
                 setTimeout(function() {
-                    // Coba alihkan ke browser eksternal
-                    // Cara ini membuat "intent" untuk membuka URL di browser utama Android
-                    // Untuk iOS, ini akan mencoba membuka link di Safari
                     const currentUrl = window.location.href;
                     const intentUrl = "intent://" + currentUrl.replace(/https?:\/\//, "") + "#Intent;scheme=https;package=com.android.chrome;end";
-                    
-                    // Coba buka dengan intent untuk Android, atau fallback ke cara biasa untuk iOS
                     try {
-                         // Untuk Android, coba buka di Chrome
                         if (/android/i.test(userAgent)) {
                            window.location.href = intentUrl;
                         } else {
-                           // Untuk iOS dan lainnya, cukup panggil ulang URL
                            window.location.href = currentUrl;
                         }
                     } catch (e) {
-                        // Jika gagal, lakukan redirect standar
                         window.location.href = currentUrl;
                     }
 
-                }, 3000); // Waktu tunggu 3 detik
+                }, 3000);
             }
         })();
     </script>
